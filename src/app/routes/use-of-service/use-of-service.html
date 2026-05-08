@@ -1,1 +1,210 @@
-<p>use-of-service works!</p>
+<app-legal-layout
+  eyebrow="Use of Service"
+  [title]="'Use of Service Agreement'"
+  intro="A practical, plain-language agreement that defines how you and Billinox work together — what you can do, what's off-limits, and how we handle availability, data, and security."
+  lastUpdated="May 8, 2026"
+  version="1.0"
+>
+  <app-legal-section id="agreement" [title]="'1. Acceptance of Agreement'">
+    <app-p>
+      By accessing or using Billinox, you agree to this Use of Service Agreement
+      together with our Terms of Service and Privacy Policy. If you do not
+      agree, please do not use the Service.
+    </app-p>
+  </app-legal-section>
+
+  <app-legal-section id="description" [title]="'2. Description of the Service'">
+    <app-p> Billinox provides: </app-p>
+
+    <app-ul>
+      <li>Invoice creation and delivery</li>
+      <li>Customer management and billing</li>
+      <li>Quotation and estimate generation</li>
+      <li>PDF export and print-ready documents</li>
+      <li>Offline-first business operation</li>
+      <li>Optional encrypted cloud backups</li>
+      <li>Multi-device synchronization</li>
+    </app-ul>
+  </app-legal-section>
+
+  <app-legal-section id="responsibilities" [title]="'3. User Responsibilities'">
+    <app-ul>
+      <li>Maintain accurate billing and customer records.</li>
+      <li>Protect your account credentials and recovery codes.</li>
+      <li>Manage your own backups and exports periodically.</li>
+      <li>Comply with local laws, tax obligations, and invoicing standards.</li>
+      <li>
+        Verify the accuracy of every invoice before sending it to a customer.
+      </li>
+    </app-ul>
+  </app-legal-section>
+
+  <app-legal-section id="permitted-use" [title]="'4. Permitted Use'">
+    <app-p>
+      You may use Billinox for legitimate business activities, including:
+    </app-p>
+    <app-ul>
+      <li>Issuing invoices to customers</li>
+      <li>Tracking payments and receivables</li>
+      <li>Generating quotes and estimates</li>
+      <li>Managing financial records for your business</li>
+      <li>Running operations for sole traders, freelancers, and SMBs</li>
+    </app-ul>
+  </app-legal-section>
+
+  <app-legal-section id="prohibited-use" [title]="'5. Prohibited Use'">
+    <app-legal-callout tone="warning" [title]="'Strictly forbidden'">
+      The following activities will result in immediate suspension and may be
+      reported to authorities.
+    </app-legal-callout>
+
+    <app-ul>
+      <li>Illegal financial activity, money laundering, or tax evasion.</li>
+      <li>Issuing fraudulent or misleading invoices.</li>
+      <li>Unauthorized access attempts against Billinox or other users.</li>
+      <li>Distributing malware or harmful code through the Service.</li>
+      <li>Abusing cloud sync or backup quotas.</li>
+      <li>Reverse engineering or attempting to extract source code.</li>
+      <li>Reselling or sublicensing access without written permission.</li>
+      <li>Disrupting the Service or interfering with other users.</li>
+    </app-ul>
+  </app-legal-section>
+
+  <app-legal-section id="data-ownership" [title]="'6. Data Ownership'">
+    <app-p>
+      You own your business data. Billinox makes no claim to your invoices,
+      customers, quotations, or financial records.
+    </app-p>
+
+    <app-ul>
+      <li>You retain full ownership of all content you create in Billinox.</li>
+      <li>Billinox does not sell or share your business data.</li>
+      <li>You are responsible for keeping copies of important records.</li>
+    </app-ul>
+  </app-legal-section>
+
+  <app-legal-section
+    id="offline"
+    [title]="'7. Offline-First Architecture Notice'"
+  >
+    <app-legal-callout title="Local-first storage">
+      Most data is stored on your device. Cloud sync is optional and only
+      enabled when you turn it on.
+    </app-legal-callout>
+
+    <app-ul>
+      <li>
+        Losing or wiping a device may result in permanent data loss if backups
+        are disabled.
+      </li>
+      <li>
+        Device security (lock screen, encryption, MDM) is your responsibility.
+      </li>
+      <li>We recommend enabling cloud backups or scheduled exports.</li>
+    </app-ul>
+  </app-legal-section>
+
+  <app-legal-section id="availability" [title]="'8. Service Availability'">
+    <app-ul>
+      <li>
+        Some features (cloud sync, payment integrations) require an internet
+        connection.
+      </li>
+      <li>Third-party providers may experience independent outages.</li>
+      <li>
+        We perform routine maintenance, typically during low-traffic windows.
+      </li>
+      <li>Offline mode keeps invoicing functional during interruptions.</li>
+    </app-ul>
+  </app-legal-section>
+
+  <app-legal-section id="security" [title]="'9. Security Responsibilities'">
+    <app-ul>
+      <li>Use a strong, unique password and enable 2FA.</li>
+      <li>Lock or encrypt devices that hold local Billinox data.</li>
+      <li>Sign out of shared devices and review active sessions regularly.</li>
+      <li>Limit multi-device access to devices you trust.</li>
+    </app-ul>
+  </app-legal-section>
+
+  <app-legal-section id="suspension" [title]="'10. Suspension & Termination'">
+    <app-p> Billinox may suspend, restrict, or terminate access if: </app-p>
+    <app-ul>
+      <li>You violate this Agreement or our Terms.</li>
+      <li>Your account shows signs of fraud or compromise.</li>
+      <li>We are required to act by law or a legal order.</li>
+      <li>Investigation of suspected misuse is necessary to protect users.</li>
+    </app-ul>
+    <app-p>
+      Where possible, we provide notice and a chance to remedy issues before
+      termination.
+    </app-p>
+  </app-legal-section>
+
+  <app-legal-section id="liability" [title]="'11. Liability Disclaimer'">
+    <app-legal-callout tone="warning" title='Provided "as is"'>
+      Billinox is provided "as is" without warranty. You are solely responsible
+      for the accuracy of your invoices and financial records. Billinox is not
+      liable for tax filing errors, business losses, or regulatory penalties
+      resulting from your use of the Service.
+    </app-legal-callout>
+  </app-legal-section>
+
+  <app-legal-section id="compliance" [title]="'12. Compliance References'">
+    <app-ul>
+      <li>EU General Data Protection Regulation (GDPR)</li>
+      <li>EU Digital Services Act (DSA)</li>
+      <li>Nigeria Data Protection Act 2023 (NDPA)</li>
+      <li>
+        Standard SaaS security practices including encryption and
+        least-privilege access
+      </li>
+    </app-ul>
+  </app-legal-section>
+
+  <app-legal-section id="updates" [title]="'13. Updates to this Agreement'">
+    <app-p>
+      We may update this Agreement to reflect new features, legal requirements,
+      or operational changes. Material updates will be announced in-app and by
+      email at least 14 days before they take effect.
+    </app-p>
+  </app-legal-section>
+
+  <app-legal-section id="disputes" [title]="'14. Contact & Dispute Resolution'">
+    <app-p> For support, complaints, or regulatory matters, contact us: </app-p>
+
+    <app-ul>
+      <li>
+        Legal:
+        <a
+          className="text-foreground underline underline-offset-4"
+          href="mailto:{{ legalEmail }}"
+        >
+          {{ legalEmail }}
+        </a>
+      </li>
+      <li>
+        Privacy:
+        <a
+          className="text-foreground underline underline-offset-4"
+          href="mailto:{{ privacyEmail }}"
+        >
+          {{ privacyEmail }}
+        </a>
+      </li>
+      <li>
+        Abuse reports:
+        <a
+          className="text-foreground underline underline-offset-4"
+          href="mailto:{{ abuseEmail }}"
+        >
+          {{ abuseEmail }}
+        </a>
+      </li>
+      <li>
+        EU users may contact their local Data Protection Authority. Nigerian
+        users may contact the NDPC.
+      </li>
+    </app-ul>
+  </app-legal-section>
+</app-legal-layout>
