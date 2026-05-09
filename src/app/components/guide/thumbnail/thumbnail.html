@@ -1,0 +1,18 @@
+<div
+  class="relative aspect-video w-full overflow-hidden rounded-xl bg-secondary"
+>
+  <img
+    loading="lazy"
+    [src]="imageUrl"
+    [alt]="alt"
+    class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+  />
+  <div
+    class="absolute inset-0 bg-gradient-to-t from-secondary/80 via-secondary/20 to-transparent"
+  ></div>
+  <span
+    class="absolute left-1/2 top-1/2 grid h-12 w-12 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-primary text-primary-foreground shadow-lg transition-transform duration-300 group-hover:scale-110"
+  >
+    <svg lucidePlay class="h-5 w-5 fill-current" />
+  </span>
+</div>

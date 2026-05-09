@@ -15,6 +15,10 @@ export const routes: Routes = [
       import('./routes/contact/contact').then((m) => m.Contact),
   },
   {
+    path: 'guides',
+    loadComponent: () => import('./routes/guides/guides').then((m) => m.Guides),
+  },
+  {
     path: 'privacy',
     loadComponent: () =>
       import('./routes/privacy/privacy').then((m) => m.Privacy),
