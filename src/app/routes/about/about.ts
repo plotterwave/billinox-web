@@ -1,15 +1,34 @@
 import { Component } from '@angular/core';
 import { Navbar } from '../../components/site/navbar/navbar';
-import { LucideAccessibility, LucideDynamicIcon, LucideLock, LucideShieldCheck, LucideSparkles, LucideWifiOff, LucideZap, LucideHeart, LucideArrowRight, LucidePlay } from '@lucide/angular';
+import {
+  LucideAccessibility,
+  LucideDynamicIcon,
+  LucideLock,
+  LucideShieldCheck,
+  LucideSparkles,
+  LucideWifiOff,
+  LucideZap,
+  LucideHeart,
+  LucideArrowRight,
+  LucidePlay,
+} from '@lucide/angular';
 import { lucideGithub, lucideLinkedin, lucideTwitter } from '@ng-icons/lucide';
-import { HlmIcon } from "@spartan-ng/helm/icon";
-import { NgIconComponent } from "@ng-icons/core";
-import { Counter } from "../../components/shared/counter/counter";
-import { Footer } from "../../components/site/footer/footer";
+import { NgIconComponent } from '@ng-icons/core';
+import { Counter } from '../../components/shared/counter/counter';
+import { Footer } from '../../components/site/footer/footer';
 
 @Component({
   selector: 'app-about',
-  imports: [Navbar, LucideDynamicIcon, HlmIcon, NgIconComponent, Counter, LucideHeart, LucideArrowRight, LucidePlay, Footer],
+  imports: [
+    Navbar,
+    LucideDynamicIcon,
+    NgIconComponent,
+    Counter,
+    LucideHeart,
+    LucideArrowRight,
+    LucidePlay,
+    Footer,
+  ],
   templateUrl: './about.html',
   styleUrl: './about.css',
 })
