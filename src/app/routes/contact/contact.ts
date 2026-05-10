@@ -192,7 +192,7 @@ export class Contact {
     formData.append('message', this.fc.message.value!);
 
     this.status = 'submitting';
-    fetch('/', {
+    fetch('/contact', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: new URLSearchParams(formData as any).toString(),
