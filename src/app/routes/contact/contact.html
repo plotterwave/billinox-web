@@ -91,6 +91,7 @@
           class="mt-6 grid gap-4 sm:grid-cols-2"
           [formGroup]="contactForm"
         >
+          <input type="hidden" name="form-name" value="Billinox-Contact" />
           <div class="sm:col-span-1">
             <label
               for="name"
@@ -197,9 +198,10 @@
             <hlm-select
               [itemToString]="categoriesToString"
               formControlName="category"
-               
             >
-              <hlm-select-trigger class="!h-11 w-full appearance-none rounded-xl mt-1.5">
+              <hlm-select-trigger
+                class="!h-11 w-full appearance-none rounded-xl mt-1.5"
+              >
                 <hlm-select-value placeholder="Select a fruit" />
               </hlm-select-trigger>
               <hlm-select-content *hlmSelectPortal>
