@@ -87,6 +87,7 @@
 
         <form
           name="Contact"
+          data-netlify-recaptcha="true"
           data-netlify="true"
           (ngSubmit)="onSubmit()"
           class="mt-6 grid gap-4 sm:grid-cols-2"
@@ -214,24 +215,6 @@
                 </hlm-select-group>
               </hlm-select-content>
             </hlm-select>
-
-            <!-- <div class="relative mt-1.5">
-              <select
-              hlmSelect
-                id="category"
-                name="category"
-                formControlName="category"
-                class="h-11 w-full appearance-none rounded-xl border border-input bg-transparent px-3 pr-9 text-sm shadow-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
-              >
-                @for (c of categories; track $index) {
-                  <option [value]="c">{{ c }}</option>
-                }
-              </select>
-              <svg
-                lucideChevronDown
-                class="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground"
-              />
-            </div> -->
           </div>
           <div class="sm:col-span-2">
             <label
@@ -266,6 +249,9 @@
                 </p>
               }
             }
+          </div>
+          <div class="sm-col-span-3">
+            <div data-netlify-recaptcha="true"></div>
           </div>
           <div class="sm:col-span-2">
             <button
