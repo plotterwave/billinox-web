@@ -186,8 +186,8 @@ export class Contact {
     }
 
     let captcha = '';
-    if ('grecaptcha' in globalThis) {
-      captcha = (globalThis as any).grecaptcha.getResponse();
+    if ('grecaptcha' in window) {
+      captcha = (window as any).grecaptcha.getResponse();
     }
 
     if (captcha === '') {
