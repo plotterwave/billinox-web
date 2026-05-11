@@ -14,13 +14,18 @@ import {
 
 import { routes } from './app.routes';
 import { provideNgIconLoader, withCaching } from '@ng-icons/core';
-import { HttpClient, provideHttpClient } from '@angular/common/http';
+import { HttpClient, provideHttpClient, withFetch } from '@angular/common/http';
 import {
   MARKED_EXTENSIONS,
   MARKED_OPTIONS,
   provideMarkdown,
 } from 'ngx-markdown';
 import { gfmHeadingId } from 'marked-gfm-heading-id';
+import {
+  provideClientHydration,
+  withEventReplay,
+} from '@angular/platform-browser';
+import { UrlService } from './services/url.service';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -41,11 +46,13 @@ export const appConfig: ApplicationConfig = {
         router.navigate(['/error'], {});
       }),
     ),
-    provideHttpClient(),
+    provideHttpClient(withFetch()),
     provideNgIconLoader((name) => {
-      console.log('Loading icon: ' + name);
       const http = inject(HttpClient);
-      return http.get(`/icons/${name}.svg`, { responseType: 'text' });
+      const urlService = inject(UrlService);
+      return http.get(`${urlService.baseUrl}/icons/${name}.svg`, {
+        responseType: 'text',
+      });
     }, withCaching()),
     provideMarkdown({
       markedOptions: {
@@ -63,5 +70,6 @@ export const appConfig: ApplicationConfig = {
         },
       ],
     }),
+    provideClientHydration(withEventReplay()),
   ],
 };

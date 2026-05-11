@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "serve:ssr:billinox": "node dist/billinox/server/server.mjs"
   },
   "prettier": {
     "overrides": [
@@ -26,7 +27,9 @@
     "@angular/core": "^20.0.0",
     "@angular/forms": "^20.0.0",
     "@angular/platform-browser": "^20.0.0",
+    "@angular/platform-server": "^20.0.0",
     "@angular/router": "^20.0.0",
+    "@angular/ssr": "^20.3.25",
     "@lucide/angular": "^1.14.0",
     "@ng-icons/core": "^30.4.0",
     "@ng-icons/lucide": ">=32.0.0 <34.0.0",
@@ -34,6 +37,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "embla-carousel-angular": "^20.0.0",
+    "express": "^5.1.0",
     "marked": "^16.4.2",
     "marked-gfm-heading-id": "^4.1.4",
     "ngx-markdown": "^20.1.0",
@@ -48,7 +52,9 @@
     "@angular/compiler-cli": "^20.0.0",
     "@spartan-ng/cli": "^0.0.1-alpha.686",
     "@tailwindcss/postcss": "^4.2.4",
+    "@types/express": "^5.0.1",
     "@types/jasmine": "~5.1.0",
+    "@types/node": "^20.17.19",
     "jasmine-core": "~5.7.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",

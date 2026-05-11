@@ -2,10 +2,12 @@ import {
   AfterViewInit,
   Component,
   ElementRef,
+  inject,
   Input,
   signal,
   ViewChild,
 } from '@angular/core';
+import { PlatformService } from '../../../services/platform.service';
 
 @Component({
   selector: 'app-counter',
@@ -26,21 +28,25 @@ export class Counter implements AfterViewInit {
 
   private started = false;
   private observer?: IntersectionObserver;
+  private platformService = inject(PlatformService);
+  constructor() {}
 
   ngAfterViewInit(): void {
-    this.observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !this.started) {
-          this.started = true;
-          this.startAnimation();
-        }
-      },
-      {
-        threshold: 0.3,
-      },
-    );
+    this.platformService.runOnBrowser(() => {
+      this.observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting && !this.started) {
+            this.started = true;
+            this.startAnimation();
+          }
+        },
+        {
+          threshold: 0.3,
+        },
+      );
 
-    this.observer.observe(this.counterRef.nativeElement);
+      this.observer.observe(this.counterRef.nativeElement);
+    });
   }
 
   private startAnimation(): void {
