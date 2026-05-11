@@ -38,13 +38,13 @@ export const appConfig: ApplicationConfig = {
         scrollPositionRestoration: 'enabled',
         anchorScrolling: 'enabled',
       }),
-      withNavigationErrorHandler((error) => {
-        const router = inject(Router);
-        if (error?.error.message) {
-          console.error('Navigation error occurred:', error.error.message);
-        }
-        router.navigate(['/error'], {});
-      }),
+      // withNavigationErrorHandler((error) => {
+      //   const router = inject(Router);
+      //   if (error?.error.message) {
+      //     console.error('Navigation error occurred:', error.error.message);
+      //   }
+      //   router.navigate(['/error'], {});
+      // }),
     ),
     provideHttpClient(withFetch()),
     provideNgIconLoader((name) => {
