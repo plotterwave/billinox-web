@@ -11,6 +11,6 @@ export class UrlService {
     const host = this.request?.headers.get('host') || 'localhost';
     const protocol = this.request?.headers.get('x-forwarded-proto') || 'http';
     console.log(this.request);
-    return this.request?.url || 'http://billinox.com'; // 'http://localhost:4200'; //`${protocol}://${host}`;
+    return this.request?.url || 'https://billinox.com'; // 'http://localhost:4200'; //`${protocol}://${host}`;
   }
 }
