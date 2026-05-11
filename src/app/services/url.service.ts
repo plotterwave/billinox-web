@@ -10,6 +10,6 @@ export class UrlService {
     // Access full URL or specific headers like host
     const host = this.request?.headers.get('host') || 'localhost';
     const protocol = this.request?.headers.get('x-forwarded-proto') || 'http';
-    return this.request?.url || 'https://billinox.com'; // 'http://localhost:4200'//`${protocol}://${host}`;
+    return this.request?.url || 'http://localhost:4200'; //`${protocol}://${host}`;
   }
 }
