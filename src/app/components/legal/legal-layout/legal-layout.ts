@@ -25,6 +25,7 @@ import {
 import { NgClass } from '@angular/common';
 import { Footer } from '../../site/footer/footer';
 import { debounceTime, Subject } from 'rxjs';
+import { PlatformService } from '../../../services/platform.service';
 
 @Component({
   selector: 'app-legal-layout',
@@ -79,6 +80,7 @@ export class LegalLayout implements OnInit, OnDestroy, AfterViewInit {
   };
 
   public search$ = new Subject<string>();
+  private platformService = inject(PlatformService);
 
   constructor() {}
 
@@ -95,14 +97,18 @@ export class LegalLayout implements OnInit, OnDestroy, AfterViewInit {
   }
 
   ngOnDestroy() {
-    window.removeEventListener('scroll', this.onScroll);
+    this.platformService.runOnBrowser(() =>
+      window.removeEventListener('scroll', this.onScroll),
+    );
   }
 
   ngAfterViewInit() {
     this.filteredSections = this.sections.toArray();
-    this.onScroll();
-    window.addEventListener('scroll', this.onScroll, { passive: true });
     this.cdr.detectChanges();
+    this.platformService.runOnBrowser(() => {
+      this.onScroll();
+      window.addEventListener('scroll', this.onScroll, { passive: true });
+    });
   }
 
   print() {
@@ -110,7 +116,9 @@ export class LegalLayout implements OnInit, OnDestroy, AfterViewInit {
   }
 
   scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    this.platformService.runOnBrowser(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
   }
 
   search(query: string) {

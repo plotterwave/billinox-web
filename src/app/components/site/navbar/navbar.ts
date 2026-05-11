@@ -1,9 +1,10 @@
 import { NgClass } from '@angular/common';
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { LucideMenu, LucideX } from '@lucide/angular';
 import { HlmButton } from '@spartan-ng/helm/button';
 import { NgIconComponent } from '@ng-icons/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { PlatformService } from '../../../services/platform.service';
 
 @Component({
   selector: 'app-navbar',
@@ -31,6 +32,7 @@ export class Navbar implements OnInit, OnDestroy {
 
   public scrolled = false;
   public open = false;
+  private platformService = inject(PlatformService);
 
   onScroll = () => (this.scrolled = window.scrollY > 12);
 
@@ -39,10 +41,14 @@ export class Navbar implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    window.addEventListener('scroll', this.onScroll);
+    this.platformService.runOnBrowser(() =>
+      window.addEventListener('scroll', this.onScroll),
+    );
   }
 
   ngOnDestroy(): void {
-    window.removeEventListener('scroll', this.onScroll);
+    this.platformService.runOnBrowser(() =>
+      window.removeEventListener('scroll', this.onScroll),
+    );
   }
 }
