@@ -202,6 +202,7 @@ export class Contact {
     formData.append('category', this.fc.category.value!);
     formData.append('message', this.fc.message.value!);
     formData.append('g-recaptcha-response', captcha);
+    formData.append('form-name', 'Contact');
 
     this.status = 'submitting';
     fetch('/contact', {
