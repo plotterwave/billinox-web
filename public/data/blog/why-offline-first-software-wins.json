@@ -1,0 +1,14 @@
+ {
+    "id": "offline-first",
+    "title": "Why Offline-First Software Wins for Small Businesses",
+    "slug": "why-offline-first-software-wins",
+    "excerpt": "Spotty Wi-Fi shouldn't stop you from invoicing a customer standing right in front of you.",
+    "content": "## The reality of working on the move\n\nYour business doesn't pause when the network does. Field service, market vendors, and traveling consultants need tools that just work.\n\n### Local-first, sync later\n\nBillinox stores everything on your device first. When connectivity returns, encrypted backups quietly sync in the background.\n\n### Speed as a feature\n\nBecause data lives locally, every action is instant — no spinners between you and the next invoice.\n\n### Privacy by default\n\nYour records belong to you. Cloud backup is optional and end-to-end encrypted.\n\n## The trade-off\n\nThere isn't really one. Offline-first is just a better default for software you depend on every day.",
+    "coverImage": "",
+    "author": "Marcus Bennett",
+    "publishedAt": "2026-04-22",
+    "category": "Productivity",
+    "tags": ["Offline", "Architecture", "Mobile"],
+    "featured": false,
+    "readingTime": "4 min read"
+  }

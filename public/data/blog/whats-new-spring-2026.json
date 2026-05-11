@@ -1,0 +1,17 @@
+{
+    "id": "release-2026",
+    "title": "What's New in Billinox — Spring 2026",
+    "slug": "whats-new-spring-2026",
+    "excerpt": "Multi-currency, new templates, and a faster sync engine. Here's the rundown.",
+    "content": "## Multi-currency, finally\n\nIssue invoices in 30+ currencies with live exchange rate snapshots locked at issue time.\n\n## Six new templates\n\nFresh, minimal designs ranging from agency-formal to playful retail.\n\n## Faster sync engine\n\n3x faster reconciliation for accounts with thousands of records.",
+    "coverImage": "",
+    "author": "Billinox Team",
+    "publishedAt": "2026-05-01",
+    "category": "Updates",
+    "tags": [
+        "Release",
+        "Changelog"
+    ],
+    "featured": false,
+    "readingTime": "3 min read"
+}

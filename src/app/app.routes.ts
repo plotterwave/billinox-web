@@ -1,9 +1,22 @@
 import { Routes } from '@angular/router';
+import { blogPostResolver } from './resolvers/blog-post-resolver';
 
 export const routes: Routes = [
   {
     path: '',
     loadComponent: () => import('./routes/home/home').then((m) => m.Home),
+  },
+  {
+    path: 'blog',
+    loadComponent: () => import('./routes/blog/blog').then((m) => m.Blog),
+  },
+  {
+    path: 'blog/:slug',
+    loadComponent: () =>
+      import('./routes/blog-article/blog-article').then((m) => m.BlogArticle),
+    resolve: {
+      post: blogPostResolver,
+    },
   },
   {
     path: 'about',
@@ -33,6 +46,11 @@ export const routes: Routes = [
       import('./routes/use-of-service/use-of-service').then(
         (m) => m.UseOfService,
       ),
+  },
+  {
+    path: 'error',
+    loadComponent: () =>
+      import('./routes/errors/error/error').then((m) => m.Error),
   },
   {
     path: '**',

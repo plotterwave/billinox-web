@@ -94,6 +94,8 @@ linear-gradient(180deg, oklch(0.99 0.005 90), oklch(0.97 0.008 90));
 0 24px 48px -16px oklch(0.18 0.01 80 / 0.18);
 --shadow-glow: 0 0 0 1px oklch(0.83 0.17 88 / 0.2),
 0 20px 60px -20px oklch(0.83 0.17 88 / 0.55);
+--font-sans: "Inter", system-ui, sans-serif;
+--font-display: "Space Grotesk", "Inter", sans-serif;
 }
 
 .dark {

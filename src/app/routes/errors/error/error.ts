@@ -8,9 +8,7 @@ import { Router } from '@angular/router';
   styleUrl: './error.css',
 })
 export class Error {
-public router = inject(Router);
+  public router = inject(Router);
 
-public reset(){
-
-}
+  public reset() {}
 }
