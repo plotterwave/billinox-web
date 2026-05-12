@@ -219,6 +219,7 @@ export class ContactPage {
 
           if (response.status === 200) {
             this.status = 'success';
+            this.contactForm.reset();
             return;
           }
           this.status = 'error';
