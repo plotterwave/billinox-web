@@ -31,7 +31,7 @@ export class NewsletterForm {
     }
 
     this.processing = true;
-    this.recaptchaV3Service.execute('subscribe-to-newsletter').subscribe({
+    this.recaptchaV3Service.execute('subscribe_to_newsletter').subscribe({
       next: async (token) => {
         const formData = new FormData();
         formData.append('email', this.newsletterForm.controls.email.value!);
@@ -44,22 +44,22 @@ export class NewsletterForm {
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
             body: new URLSearchParams(formData as any).toString(),
           });
-          if(response.status === 200){
-            toast.success("Thanks");
+          if (response.status === 200) {
+            toast.success('Thanks');
             this.newsletterForm.reset();
             return;
           }
-          toast.error("Newsletter subscription failed");
+          toast.error('Newsletter subscription failed');
         } catch (error) {
           console.error(error);
-          toast.error("Newsletter subscription failed");
-        } finally{
-          this.processing=false;
+          toast.error('Newsletter subscription failed');
+        } finally {
+          this.processing = false;
         }
       },
       error: () => {
         this.processing = false;
-        toast.error("Operation failed, please try again later");
+        toast.error('Operation failed, please try again later');
       },
     });
   }
