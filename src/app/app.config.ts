@@ -27,6 +27,7 @@ import {
 } from '@angular/platform-browser';
 import { UrlService } from './services/url.service';
 import { environment } from '../environments/environment';
+import { RECAPTCHA_V3_SITE_KEY, RecaptchaSettings } from 'ng-recaptcha-2';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -72,5 +73,9 @@ export const appConfig: ApplicationConfig = {
       ],
     }),
     provideClientHydration(withEventReplay()),
+    {
+      provide: RECAPTCHA_V3_SITE_KEY,
+      useValue: environment.recaptchaSiteKey,
+    },
   ],
 };

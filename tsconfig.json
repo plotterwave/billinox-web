@@ -36,6 +36,9 @@
       ],
       "@spartan-ng/helm/select": [
         "./src/app/components/uis/select/src/index.ts"
+      ],
+      "@spartan-ng/helm/sonner": [
+        "./src/app/components/uis/sonner/src/index.ts"
       ]
     }
   },

@@ -4,14 +4,23 @@ import { BlogPost } from '../../models/blog.model';
 import { BehaviorSubject, combineLatest } from 'rxjs';
 import { Navbar } from '../../components/site/navbar/navbar';
 import { RouterLink } from '@angular/router';
-import { LucideChevronRight, LucideSparkles, LucideSearch, LucideMail, LucideCalendar, LucideClock, LucideArrowRight, LucideTag } from '@lucide/angular';
+import {
+  LucideChevronRight,
+  LucideSparkles,
+  LucideSearch,
+  LucideMail,
+  LucideCalendar,
+  LucideClock,
+  LucideArrowRight,
+  LucideTag,
+} from '@lucide/angular';
 import { AsyncPipe, NgClass } from '@angular/common';
 import { Footer } from '../../components/site/footer/footer';
 import { HlmInput } from '@spartan-ng/helm/input';
-import { HlmButton } from '@spartan-ng/helm/button';
 import { DateFormatPipe } from '../../pipes/date-format-pipe';
 import { SeoService } from '../../services/seo.service';
-
+import { NewsletterForm } from '../../components/shared/newsletter-form/newsletter-form';
+import { RecaptchaV3Module } from 'ng-recaptcha-2';
 @Component({
   selector: 'app-blog',
   imports: [
@@ -22,15 +31,15 @@ import { SeoService } from '../../services/seo.service';
     LucideSearch,
     AsyncPipe,
     NgClass,
-    LucideMail,
     Footer,
     LucideCalendar,
     LucideClock,
     LucideArrowRight,
     LucideTag,
     HlmInput,
-    HlmButton,
     DateFormatPipe,
+    NewsletterForm,
+    RecaptchaV3Module,
   ],
   templateUrl: './blog.html',
   styleUrl: './blog.css',

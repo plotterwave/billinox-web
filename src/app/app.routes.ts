@@ -1,5 +1,7 @@
 import { Routes } from '@angular/router';
 import { blogPostResolver } from './resolvers/blog-post-resolver';
+import { RECAPTCHA_V3_SITE_KEY } from 'ng-recaptcha-2';
+import { environment } from '../environments/environment';
 
 export const routes: Routes = [
   {
@@ -7,6 +9,12 @@ export const routes: Routes = [
     loadComponent: () => import('./routes/home/home').then((m) => m.Home),
   },
   {
+    providers: [
+      {
+        provide: RECAPTCHA_V3_SITE_KEY,
+        useValue: environment.recaptchaSiteKey,
+      },
+    ],
     path: 'blog',
     loadComponent: () => import('./routes/blog/blog').then((m) => m.Blog),
   },

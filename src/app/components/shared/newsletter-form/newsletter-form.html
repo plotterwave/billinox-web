@@ -1,0 +1,46 @@
+<section class="py-20">
+  <div class="mx-auto max-w-4xl px-4">
+    <div
+      class="overflow-hidden rounded-3xl border border-border bg-gradient-to-br from-card to-surface p-10 text-center shadow-elevated sm:p-14"
+    >
+      <span
+        class="grid mx-auto h-12 w-12 place-items-center rounded-2xl bg-primary/10 text-primary"
+      >
+        <svg lucideMail class="h-5 w-5" />
+      </span>
+      <h2 class="mt-5 font-display text-3xl font-bold sm:text-4xl">
+        Get the monthly digest
+      </h2>
+      <p class="mx-auto mt-3 max-w-xl text-muted-foreground">
+        One email a month with our best new articles, product updates, and
+        small-business tips. No spam, unsubscribe anytime.
+      </p>
+      <form
+        data-netlify-recaptcha="true"
+        data-netlify="true"
+        method="post"
+        name="NewsLetter"
+        [formGroup]="newsletterForm"
+        class="mx-auto mt-7 flex max-w-md flex-col gap-2 sm:flex-row"
+        (ngSubmit)="submit()"
+      >
+        <input type="hidden" name="form-name" value="NewsLetter" />
+        <input
+          hlmInput
+          type="email"
+          name="email"
+          placeholder="you@business.com"
+          class="h-11 bg-card"
+          formControlName="email"
+        />
+        <button
+          hlmBtn
+          type="submit"
+          class="h-11 bg-secondary text-secondary-foreground hover:bg-secondary/90"
+        >
+          Subscribe
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
